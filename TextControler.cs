@@ -62,9 +62,9 @@ public class TextControler : MonoBehaviour {
         }
     }
     void state_mirror() {
-        text.text = "Przepiękne lustro w odrużnieniu od twarzy ktora w niej widzisz " +
-                    "wygląda na uszkodzone, jeżeli delikatnie je odsuniesz " + // \n new line
-                    "bedziesz w stanie wziąć kawałek \n\n\n" +
+        text.text = "Przepiękne lustro w odróżnieniu od twarzy którą w niej widzisz, " +
+                    "wygląda na uszkodzone, jeżeli delikatnie ją odsuniesz " + // \n new line
+                    "będziesz w stanie wziąć kawałek \n\n\n" +
                     "Kliknij T by wziąć kawałek szkła lub R by rozejrzeć się po celi";
         if (Input.GetKeyDown(KeyCode.R)) {
             myState = States.cell;
