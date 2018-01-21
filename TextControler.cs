@@ -46,8 +46,8 @@ public class TextControler : MonoBehaviour {
     #region State handler methods
     void cell()
     {
-        text.text = "Jesteś wieźniem w celi, i chcesz z niej uciec. Widzisz " +
-            "jakąś brudną koszulkę na lóżku, lustro na ścianie i drzwi " + // \n new line
+        text.text = "Jesteś więźniem w celi i chcesz z niej uciec. Widzisz " +
+            "jakąś brudną koszulkę na łóżku, lustro na ścianie i drzwi " + // \n new line
             "które są zamknięte od zewnątrz .\n\n\n" +
             "Kliknij S by spojrzeć na koszulkę, M by sprawdzić Lustro i L by sprawdzić drzwi.";
 
@@ -64,7 +64,7 @@ public class TextControler : MonoBehaviour {
         if      (Input.GetKeyDown(KeyCode.R))   {myState = States.cell;}
     }
     void mirror() {
-        text.text = "Przepiękne lustro w odróżnieniu od twarzy którą w niej widzisz." +
+        text.text = "Przepiękne lustro w odróżnieniu od twarzy którą w nim widzisz." +
                     "Wygląda na uszkodzone, jeżeli delikatnie je przesuniesz,  " + // \n new line
                     "będziesz w stanie wziąć kawałek. \n\n\n" +
                     "Kliknij T by wziąć kawałek szkła lub R by rozejrzeć się po celi";
@@ -82,8 +82,7 @@ public class TextControler : MonoBehaviour {
     }
     void cell_mirror() {
         text.text = "Jesteś więźniem w celi, i chcesz z niej uciec. Widzisz " +
-                    "jakąś brudną koszulkę na łóżku, masz kawalek lustra w ręce i drzwi " + // \n new line
-                    "które są zamknięte od zewnątrz. \n\n\n" +
+                    "jakąś brudną koszulkę na łóżku, drzwi które są zamknięte od zewnątrz i masz kawalek lustra w ręce \n\n\n" +
                     "Kliknij S by spojrzeć na koszulkę lub L by sprawdzić drzwi.";
 
         if      (Input.GetKeyDown(KeyCode.S))   {myState = States.sheets_1;}
@@ -101,7 +100,7 @@ public class TextControler : MonoBehaviour {
 
     void lock_1() {
         text.text = "Ten kawałek lustra powinien się nadawać,  " +
-                    "wystarczy tylko troche przekręcić,  " + // \n new line
+                    "wystarczy tylko trochę przekręcić  " + // \n new line
                     "i powinienem być wolny! \n\n" +
                     "Kliknij R by wóocić do celi lub  O by otworzyć ";
 
@@ -113,8 +112,8 @@ public class TextControler : MonoBehaviour {
     {
         text.text = "Jesteś na korytarzu,  " +
                     
-                    "Gratulacje udało ci się uciec ! \n\n\n\n" +
-                    "Widzisz schody, na podłodze coś leży, oraz przed sobą masz zamknięte drzwi \n\n\n"+
+                    "Gratulację ! Udało ci się uciec ! \n\n\n\n" +
+                    "Widzisz schody, na podłodzę coś leży, oraz przed sobą masz zamknięte drzwi \n\n\n"+
                     "Kliknij S by sprawdzić schody, F podłogę, C zamknięte drzwi";
 
         if      (Input.GetKeyDown(KeyCode.S))   {myState = States.stairs_0;}
@@ -122,9 +121,9 @@ public class TextControler : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.C))   {myState = States.closet_door;}
     }
     void stairs_0(){
-        text.text = "Wchodzisz po schodach które wydają okropny hałas,  " +
+        text.text = "Wchodzisz po schodach, które wydają okropny hałas,  " +
                     "wydaje mi się, że nie ma sensu się tam pakować,  " +
-                    "Niechcesz dać się znów złapać ! \n\n\n\n" +
+                    "Nie chcesz dać się znów złapać ! \n\n\n\n" +
                     "Kliknij R by wrócić na korytarz ";
 
         if (Input.GetKeyDown(KeyCode.R)) {myState = States.corridor_0;}
@@ -140,7 +139,7 @@ public class TextControler : MonoBehaviour {
     void floor(){
         text.text = "Przyglądasz się jakieś dziwnej rzeczy na podłodzę.  " +
                     "Wygląda na jakiś metalowe.... coś.  " +
-                    "Zaraz przecież to spinka do włosów, może się przydać.  \n\n\n\n" +
+                    "Zaraz... przecież to spinka do włosów, może się przydać.  \n\n\n\n" +
                     "Kliknij H by podnieść spinkę, R by rozejrzeć się po korytarzu ";
 
         if          (Input.GetKeyDown(KeyCode.H)) {myState = States.corridor_1;}
@@ -156,7 +155,7 @@ public class TextControler : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.P)) {myState = States.in_closet;}
     }
     void stairs_1(){
-        text.text = "No gratuluje pomysłowości. " +
+        text.text = "No gratuluje pomysłowości ! " +
                     "Jak ty w ten sposób chcesz uciekać to lepiej posłuchaj mnie. " +
                     "Tą spinką otworzysz drzwi!  \n\n\n\n" +
                     "Kliknij R by wrócić na korytarz ";
@@ -165,8 +164,8 @@ public class TextControler : MonoBehaviour {
     }
     void in_closet(){
         text.text = "Udało się otworzyć drzwi. " +
-                    "No i proszę schowek a w nim ubranie sprzątacza. " +
-                    "W tym stroju był byś w stanie nabrać każdego. \n\n\n\n" +
+                    "No i proszę schowek, a w nim ubranie sprzątacza. " +
+                    "W tym stroju byłbyś w stanie nabrać każdego. \n\n\n\n" +
                     "Kliknij D by się przebrać, R by wrócić na korytarz ";
 
         if      (Input.GetKeyDown(KeyCode.D))   {myState = States.corridor_3;}
@@ -184,26 +183,26 @@ public class TextControler : MonoBehaviour {
 
     }
     void stairs_2(){
-        text.text = "Poraz kolejny twoja upartość mnie zadziwia. A już myślałem " +
-                    ", że nie jesteś w wstanie mnie zdziwić. Nie udasz się tam  " +
+        text.text = "Po raz kolejny twoja upartość mnie zadziwia. A już myślałem " +
+                    ", że nie jesteś w stanie mnie zdziwić. Nie udasz się tam  " +
                     "ubrany w ten sposób! \n\n\n\n" +
                     "Kliknij R by wrócić na korytarz ";
 
         if      (Input.GetKeyDown(KeyCode.R))   {myState = States.corridor_2;}
     }
     void corridor_3(){
-        text.text = "No proszę bardzo, rzec by się chciało, że dotwarzy ci w tym wdzianku. " +
+        text.text = "No proszę bardzo, rzec by się chciało, że do twarzy ci w tym wdzianku. " +
                     "Przebrany za sprzątacza jesteś w stanie przemknąć się po schodach. \n\n\n\n" +
-                    "Kliknij S by wejść po schodach, U by przebrać się z powrotem ";
+                    "Kliknij S by wejść po schodach, U by przebrać się spowrotem ";
 
         if (Input.GetKeyDown(KeyCode.S)) { myState = States.courtyard; }
         else if (Input.GetKeyDown(KeyCode.U)) { myState = States.in_closet; }
 
     }
     void courtyard(){
-        text.text = "Udało się jesteś na dziedzińcu, " +
+        text.text = "Udało się! Jesteś na dziedzińcu, " +
                     "pora zacząć cieszyć się wolnością!\n\n  " +
-                    "Gratulacje jesteś wolny ! \n\n\n\n" +
+                    "Gratulacje! Jesteś wolny ! \n\n\n\n" +
                     "Kliknij R by zagrać ponownie ";
 
         if (Input.GetKeyDown(KeyCode.R)) { myState = States.cell; }
